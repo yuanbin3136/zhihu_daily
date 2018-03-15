@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Wind on 2018/2/6.
  */
 
-abstract public class BaseActivity<P extends BasePersenter> extends AppCompatActivity{
+abstract public class BaseActivity<P extends BasePresenter> extends AppCompatActivity{
     protected P mPersenter;
     @Override
     protected void onDestroy() {

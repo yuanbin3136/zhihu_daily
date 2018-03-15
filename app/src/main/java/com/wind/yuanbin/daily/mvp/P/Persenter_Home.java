@@ -1,11 +1,10 @@
 package com.wind.yuanbin.daily.mvp.P;
 
 
-import com.wind.yuanbin.daily.mvp.BasePersenter;
+import com.wind.yuanbin.daily.mvp.BasePresenter;
 import com.wind.yuanbin.daily.mvp.Contract;
 import com.wind.yuanbin.daily.mvp.M.DailyModel;
 import com.wind.yuanbin.daily.retrofit.DailyService;
-import com.wind.yuanbin.daily.mvp.M.Daily_details;
 import com.wind.yuanbin.daily.utils.L;
 import com.wind.yuanbin.daily.utils.RetroUtils;
 
@@ -19,7 +18,7 @@ import retrofit2.Response;
  * Created by Wind on 2018/2/5.
  */
 
-public class Persenter_Home extends BasePersenter<Contract.UIView> implements Contract.IPersenter_Home {
+public class Persenter_Home extends BasePresenter<Contract.UIView> implements Contract.IPersenter_Home {
 
     Call<DailyModel> call;
 
