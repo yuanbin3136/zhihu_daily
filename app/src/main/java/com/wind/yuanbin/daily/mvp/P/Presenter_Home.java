@@ -18,17 +18,17 @@ import retrofit2.Response;
  * Created by Wind on 2018/2/5.
  */
 
-public class Persenter_Home extends BasePresenter<Contract.UIView> implements Contract.IPersenter_Home {
+public class Presenter_Home extends BasePresenter<Contract.UIView> implements Contract.IPersenter_Home {
 
     Call<DailyModel> call;
 
     DailyModel dailyModel;
 
-    public Persenter_Home(Contract.UIView view) {
+    public Presenter_Home(Contract.UIView view) {
         super(view);
     }
 
-    //    public Persenter_Home(Contract.UIView view){
+    //    public Presenter_Home(Contract.UIView view){
 //        this.view = view;
 //    }
     @Override

@@ -1,7 +1,6 @@
 package com.wind.yuanbin.daily.mvp.V;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,7 +19,7 @@ import com.wind.yuanbin.daily.R;
 import com.wind.yuanbin.daily.mvp.BaseFragment;
 import com.wind.yuanbin.daily.mvp.Contract;
 import com.wind.yuanbin.daily.mvp.M.DailyModel;
-import com.wind.yuanbin.daily.mvp.P.Persenter_Home;
+import com.wind.yuanbin.daily.mvp.P.Presenter_Home;
 import com.wind.yuanbin.daily.retrofit.HomeAdapter;
 import com.wind.yuanbin.daily.utils.L;
 
@@ -33,7 +32,7 @@ import com.wind.yuanbin.daily.utils.L;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends BaseFragment<Persenter_Home> implements Contract.UIView, SwipeRefreshLayout.OnRefreshListener, HomeAdapter.OnItemClickLitener {
+public class HomeFragment extends BaseFragment<Presenter_Home> implements Contract.UIView, SwipeRefreshLayout.OnRefreshListener, HomeAdapter.OnItemClickLitener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -75,13 +74,13 @@ public class HomeFragment extends BaseFragment<Persenter_Home> implements Contra
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-//        IPersenterHome = new Persenter_Home(this);
+//        IPersenterHome = new Presenter_Home(this);
         L.o(this.toString() + "onCreate");
     }
 
     @Override
-    public Persenter_Home initPersenter() {
-        return new Persenter_Home(this);
+    public Presenter_Home initPersenter() {
+        return new Presenter_Home(this);
     }
 
     SwipeRefreshLayout swl_home;

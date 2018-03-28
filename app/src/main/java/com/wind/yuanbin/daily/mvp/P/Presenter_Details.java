@@ -16,17 +16,17 @@ import retrofit2.Response;
  * Created by Wind on 2018/2/5.
  */
 
-public class Persenter_Details extends BasePresenter<Contract.UIDetailsView> implements Contract.IPersenter_Details {
+public class Presenter_Details extends BasePresenter<Contract.UIDetailsView> implements Contract.IPersenter_Details {
 
     Call<Daily_details> call;
 
 //    Daily_details daily_details;
 
-    public Persenter_Details(Contract.UIDetailsView view) {
+    public Presenter_Details(Contract.UIDetailsView view) {
         super(view);
     }
 
-    //    public Persenter_Details(Contract.UIDetailsView view){
+    //    public Presenter_Details(Contract.UIDetailsView view){
 //        this.view = view;
 //    }
     @Override

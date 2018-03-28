@@ -18,12 +18,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.wind.yuanbin.daily.mvp.Contract;
 import com.wind.yuanbin.daily.mvp.M.Daily_details;
-import com.wind.yuanbin.daily.mvp.P.Persenter_Details;
+import com.wind.yuanbin.daily.mvp.P.Presenter_Details;
 import com.wind.yuanbin.daily.mvp.BaseActivity;
 import com.wind.yuanbin.daily.utils.L;
 import com.wind.yuanbin.daily.utils.ShareUtils;
 
-public class DetailsActivity extends BaseActivity<Persenter_Details> implements Contract.UIDetailsView{
+public class DetailsActivity extends BaseActivity<Presenter_Details> implements Contract.UIDetailsView{
 
     WebView webView;
     ImageView iv_title;
@@ -54,8 +54,8 @@ public class DetailsActivity extends BaseActivity<Persenter_Details> implements 
     }
 
     @Override
-    public Persenter_Details initPersenter() {
-        return new Persenter_Details(this);
+    public Presenter_Details initPersenter() {
+        return new Presenter_Details(this);
     }
 
     @Override
