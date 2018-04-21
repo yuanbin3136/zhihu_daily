@@ -167,7 +167,9 @@ public class DetailsActivity extends BaseActivity<Presenter_Details> implements 
 
         html = sb.insert(index + 6, Contract.CSS).toString();
 
-        webView.loadData(html,"text/html","utf-8");
+//        webView.loadData(html,"text/html","utf-8");
+//      在Android版本为7.1.1的模拟器中出现了乱码，需要将加载方法做出如下修改
+        webView.loadData(html,"text/html;charset=UTF-8",null);
     }
 
     private void setTitle() {
