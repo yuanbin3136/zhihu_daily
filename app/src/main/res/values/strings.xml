@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">daily</string>
     <string name="action_settings">更多</string>
-    <string name="app_introduce">简洁的知乎日报 </string>
+    <string name="app_introduce">简洁的知乎日报</string>
     <string name="app_auther_weibo">http://weibo.cn/Msteriourswind</string>
     <string name="app_service_des">一个简洁的知乎日报</string>
 

@@ -1,8 +1,8 @@
 package com.wind.yuanbin.daily.mvp;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by Wind on 2018/2/6.

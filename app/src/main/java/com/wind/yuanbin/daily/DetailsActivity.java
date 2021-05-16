@@ -3,7 +3,7 @@ package com.wind.yuanbin.daily;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,6 +22,11 @@ import com.wind.yuanbin.daily.mvp.P.Presenter_Details;
 import com.wind.yuanbin.daily.mvp.BaseActivity;
 import com.wind.yuanbin.daily.utils.L;
 import com.wind.yuanbin.daily.utils.ShareUtils;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 public class DetailsActivity extends BaseActivity<Presenter_Details> implements Contract.UIDetailsView{
 
@@ -160,16 +165,25 @@ public class DetailsActivity extends BaseActivity<Presenter_Details> implements 
 
     private void showHtml(Daily_details model) {
         String html = model.getBody();
-//        String css = model.getCss().get(0);
-
-        StringBuilder sb = new StringBuilder(html);
-        int index = sb.lastIndexOf("</div>");
-
-        html = sb.insert(index + 6, Contract.CSS).toString();
+        html = handleHtml(html);
 
 //        webView.loadData(html,"text/html","utf-8");
 //      在Android版本为7.1.1的模拟器中出现了乱码，需要将加载方法做出如下修改
         webView.loadData(html,"text/html;charset=UTF-8",null);
+    }
+
+    /**
+     * 处理一下html数据，增加 <html、header、style></html、header、style>...
+     */
+    String handleHtml(String body) {
+        StringBuilder sb = new StringBuilder(body);
+
+        sb.insert(0, Contract.END_MID);
+        sb.insert(0, Contract.CSS);
+        sb.insert(0, Contract.START_TEXT);
+        sb.append(Contract.END_TEXT);
+
+        return sb.toString();
     }
 
     private void setTitle() {
